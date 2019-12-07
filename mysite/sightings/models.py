@@ -27,7 +27,7 @@ class Squirrel(models.Model):
     AM = 'AM'
     PM = 'PM'
 
-    Shift = models.Charfield(
+    Shift = models.CharField(
         help_text=_('Morning or Afternoon Shift'),
         choices = (
             (AM, 'In the morning'),
@@ -36,6 +36,7 @@ class Squirrel(models.Model):
         default = AM,
         max_length = 20,
         null = True,
+	)
 
     Date = models.DateField(
         help_text = _('Date encountered'),
@@ -45,10 +46,10 @@ class Squirrel(models.Model):
     ADULT = 'Adult'
     JUVENILE = 'Juvenile'
     UNKNOWN = 'Unknown'
-    BLANK = '   '
+    BLANK = ''
 
     Age = models.CharField(
-        help_text=_('Age')
+        help_text=_('Age'),
         choices = (
             (ADULT, 'Adult'),
             (JUVENILE, 'Juvenile'),
@@ -159,9 +160,9 @@ class Squirrel(models.Model):
         null = True,
     )
 
-     Specific_Location = models.CharField(
+    Specific_Location = models.CharField(
         help_text = _('Specific Location'),
-        max_length = 20,
+        max_length = 100,
         null = True,
     )
 
