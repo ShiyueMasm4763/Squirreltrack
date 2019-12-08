@@ -1,42 +1,17 @@
 <html>
 <head>
 <title> General Information About Sighitng Statistics  </title>
-{% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'sightings/style.css' %}">
-<style>
-table {
-	border-collapse: collapse;
-	width: 100%;
-th, td {
-	padding: 8px;
-	text-align: left;
-	border-bottom: 1px solid #ddd;
-tr:hover {background-color:#f5f5f5;}
-</style>
 </head>
-<body>
-	<h2> <font color="SlateBlue"> General Statistics of Sightings </font> </h2>
-<table>
-	<th>Unique Squirrel ID</th>
-	<th>Date</th>
-     	<th>Longitude</th>
-	<th>Latitude</th>
-	<th>Age</th>
-	<th>Date</th>
-	<th>Primary Fur Color</th>
-	<th>Highlight Fur Color</th>
-	{% for squirrel in squirrels %}
-	   <tr> 
-		   <td><a href="{{squirrel.Unique_Squirrel_ID}}">{{squirrel.Unique_Squirrel_ID}}</a></td>
-		   <td>{{squirrel.Date}}</td>
-		   <td>{{squirrel.X}}</td>
-		   <td>{{squirrel.Y}}</td>
-		   <td>{{squirrel.Age}}</td>
-		   <td>{{squirrel.Date}}</td>
-		   <td>{{squirrel.Primary_Fur_Color}}</td>
-		   <td>{{squirrel.Highlight_Fur_Color}}</td>
-	   </tr>
-	{% endfor %}
-</table>
-</body>
+    <body>
+        <h2>Total_Sightings: The total number of squirrels: {{Total_Sightings}}</h2>
+	<h2>Age_Adult: The total number of squirrels that are Adult: {{Age_Adult}}</h2>
+        <h2>Age_Juvenile: The total number of squirrels that are Juvenile: {{Age_Juvenile}}</h2>
+        <h2>Running: The total number of squirrels that are running: {{Running}}</h2>
+	<h2>Chasing: The total number of squirrels that are chasing: {{Chasing}}</h2>
+	<h2>Climbing: The total number of squirrels that are climbing: {{Climbing}}</h2>
+	<h2>Eating: The total number of squirrels that are eating: {{Eating}}</h2>
+        <h2>Foraging: The total number of squirrels that are foraging: {{Foraging}}</h2>
+	<a href="{% url 'sightings:display' %}">Go back to Home Page.</a>
+
+    </body>
 </html>
