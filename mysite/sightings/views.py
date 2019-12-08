@@ -33,7 +33,7 @@ def add(request):
 def stats(request):
    
     Total_Sightings=Squirrel.objects.all().count()
-    Age_Adult=Squirrel.objects.filter(age='Adult').count()
+    Age_Adult=Squirrel.objects.filter(Age='Adult').count()
     Age_Juvenile=Squirrel.objects.filter(Age='Juvenile').count()
     Running=Squirrel.objects.filter(Running=True).count()
     Chasing=Squirrel.objects.filter(Chasing=True).count()
@@ -56,10 +56,11 @@ def stats(request):
 def modify(request, squirrel_id):
 
     content1 = get_object_or_404(Squirrel, Unique_Squirrel_ID = squirrel_id)
-    content2 = SightingsForm(request.POST or None,instance = content1)
-    if content2.is_valid():
-        content2.save()
-        return redirect(f'/sightings/{squirrel_id}')
+    if request.method == "POST":
+        content2 = SquirrelForm(request.POST, instance=content1)
+        if content2.is_valid():
+            content2.save()
+            return redirect(f'/sightings/{squirrel_id}')
     context ={
         'form':content2,
         'sqid':squirrel_id,
