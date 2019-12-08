@@ -54,7 +54,7 @@ class Squirrel(models.Model):
             (ADULT, 'Adult'),
             (JUVENILE, 'Juvenile'),
             (UNKNOWN, '?'),
-            (BLANK,'    '),
+            (BLANK,''),
         ),
         default = BLANK,
         max_length = 20,
@@ -73,10 +73,11 @@ class Squirrel(models.Model):
             (GRAY, 'Gray'),
             (BLACK, 'Black'),
             (CINNAMMON, 'Cinnammon'),
-            (UNKNOWN, '     '),
+            (BLANK, ''),
+            (UNKNOWN, '?')
         ),
 
-        default = UNKNOWN,
+        default = BLANK,
         max_length = 20,
         null = True,
     )
@@ -92,7 +93,8 @@ class Squirrel(models.Model):
     GB = 'Gray, Black'
     BW = 'Black, White'
     GW = 'Gray, White'
-    UNKNOWN = '     '
+    BLANK = ''
+    UNKNOWN = '?'
 
     Highlight_Fur_Color = models.CharField(
 
@@ -109,9 +111,10 @@ class Squirrel(models.Model):
             (GB, 'Gray, Black'),
             (BW, 'Black, White'),
             (GW, 'Gray, White'),
-            (UNKNOWN, '     '),
+            (UNKNOWN, '?'),
+            (BLANK, '')
         ),
-        default = UNKNOWN,
+        default = BLANK,
         max_length = 50,
         null=True,
     )
@@ -132,7 +135,8 @@ class Squirrel(models.Model):
 
     AG = 'Above Ground'
     GP = 'Ground Plane'
-    UNKNOWN = '     '
+    UNKNOWN = '?'
+    BLANK = ''
 
     Location = models.CharField(
 
@@ -141,10 +145,11 @@ class Squirrel(models.Model):
         choices = (
             (AG, 'Above Ground'),
             (GP, 'Ground Plane'),
-            (UNKNOWN, '     '),
+            (UNKNOWN, '?'),
+            (BLANK, '')
         ),
 
-        default = UNKNOWN,
+        default = BLANK,
         max_length = 20,
         null = True,
     )
