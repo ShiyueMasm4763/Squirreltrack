@@ -9,3 +9,6 @@
 ## Introduction
 
 Our project accomplishes the goals of adding, modifying and viewing datas of squirrels via Django, based on the [**dataset provided**](https://github.com/ShiyueMasm4763/Squirreltrack/blob/master/mysite/squirrel_track_data.csv). The web-application enables us to figure out the distribution of squirrels in Central Park and also enables everyone to manage and update the database we have.
+=======
+![image](https://github.com/ShiyueMasm4763/Squirreltrack/blob/master/mysite/raw/master/image_folder/squirrel.jpg)
+
