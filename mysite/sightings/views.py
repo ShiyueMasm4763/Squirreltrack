@@ -15,7 +15,7 @@ def display(request,*args,**kwargs):
         'fields':list2,
     }    
 
-    return render(request,'sightings/sightings_list.html',context)
+    return render(request,'sightings/sightings_display.html',context)
 
 
 class add(CreateView):
@@ -45,4 +45,4 @@ def modify(request, sq_id):
         'form':content2,
         'sqid':sq_id,
     }
-    return render(request, 'sightings/edit.html', context)
+    return render(request, 'sightings/modify.html', context)
