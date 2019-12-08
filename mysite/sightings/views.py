@@ -15,7 +15,7 @@ def display(request,*args,**kwargs):
         'fields':list2,
     }    
 
-    return render(request,'sightings/sightings_display.html',context)
+    return render(request,'sightings/display.html',context)
 
 
 class add(CreateView):
@@ -31,7 +31,7 @@ def stats(request):
     context={
         'squirrels':list3,        
     }
-    return render(request,'sightings/sightings_stats.html',context)
+    return render(request,'sightings/stats.html',context)
 
 
 def modify(request, sq_id):
