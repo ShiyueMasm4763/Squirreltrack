@@ -1,10 +1,10 @@
-![image](https://github.com/ShiyueMasm4763/Squirreltrack/mysite/raw/master/image_folder/squirrel.jpg)
+![image](https://github.com/ShiyueMasm4763/Squirreltrack/blob/master/mysite/raw/master/image_folder/squirrel.jpg)
 # Tools For Analytics Final Project
 # Squirreltracker: a visulization web-application tracking squirrels in Central Park
 
-#**Group Number**:Project Group 72, Section 2
-#**Group Member**:Zelang Jia, Shiyue Ma
-#**Member's Uni**:UNIs: [zj2273, sm4763]
+>**Group Number**:Project Group 72, Section 2
+>**Group Member**:Zelang Jia, Shiyue Ma
+>**Member's Uni**:UNIs: [zj2273, sm4763]
 
 ## Introduction
 
