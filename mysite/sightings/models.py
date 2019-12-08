@@ -279,14 +279,3 @@ class Squirrel(models.Model):
         max_length = 50,
         null = True,
     )
-
-
-
-
-
-
-
-
-
-
-
