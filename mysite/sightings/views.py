@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse, reverse_lazy
 from .models import Squirrel
-
+from .forms import SightingsForm
 
 def display(request,*args,**kwargs):
 
