@@ -16,16 +16,13 @@ def display(request,*args,**kwargs):
 
 
 def add(request):
-   
-    if request.method == 'POST':
-        Form =SightingsForm(request.POST)
-        if Form.is_valid():
-            Form.save()
-            return redirect('sightings:display')
-    else:
-        Form = SightingsForm()
+    form =SightingsForm(request.POST)
+    if form.is_valid():
+        id=form['Unique_Squirrel_ID'].value()
+        form.save()
+        return redirect(f'/sightings/{id}')
     context={
-       'Form': Form,
+       'form': form,
     }
     return render(request, 'sightings/add.html', context)
 
@@ -55,14 +52,13 @@ def stats(request):
 
 def modify(request, squirrel_id):
 
-    content1 = get_object_or_404(Squirrel, Unique_Squirrel_ID = squirrel_id)
-    if request.method == "POST":
-        content2 = SquirrelForm(request.POST, instance=content1)
-        if content2.is_valid():
-            content2.save()
-            return redirect(f'/sightings/{squirrel_id}')
+    instance = get_object_or_404(Squirrel, Unique_Squirrel_ID=squirrel_id)
+    form = SightingsForm(request.POST or None,instance=instance)
+    if form.is_valid():
+        form.save()
+        return redirect(f'/sightings/{squirrel_id}') 
     context ={
-        'form':content2,
+        'form':form,
         'sqid':squirrel_id,
     }
     return render(request, 'sightings/modify.html', context)

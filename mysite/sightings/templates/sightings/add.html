@@ -1,20 +1,25 @@
-  
-<!DOCTYPE html>
-<html>
-    <head>
-    <meta charset="utf-8">
-    <style type="text/css"> </style>
-    </head>
-
-
-    <body>
-        <div class="miniwrap">
-        <h2>Add sighting view</h2>
-        <form method="POST">
+  <html>
+<h2>Add A New Squirrel Sighting Information</h2>
+<form method="POST">
           {% csrf_token %}
-          {{Form.as_p}}
+          {{form.as_p}}
         <br>
         <input type="submit" value="Add">
-        </form>
-    </body>
+</form>
+<nav>
+<ul>
+    <li> <p> Map Link</p> </li>
+    <a href="/map/">Squirrel Tracker</a>
+    <br>
+    <li> <p> Sightings Link</p> </li>
+    <a href="/sightings/">Sightings List</a>
+    <br>
+    <li> <p> Add Link</p> </li>
+    <a href="/sightings/add">Add Sighting</a>
+    <br>
+    <li> <p> Stats Link</p> </li>
+    <a href="/sightings/stats">Statistics Info</a>
+</ul>
+</nav>
+
 </html>

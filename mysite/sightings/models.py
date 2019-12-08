@@ -4,24 +4,17 @@ from django.utils.translation import gettext as _
 
 class Squirrel(models.Model):
     X = models.FloatField(
-
-        help_text=_('X'),
-
         null=True,
-
+        blank = True,
     ) 
     
     Y = models.FloatField(
-
-        help_text=_('Y'),
-
         null=True,
-
+        blank = True,
     )
 
 
     Unique_Squirrel_ID = models.CharField(
-        help_text=_('Unique_Squirrel_ID'),
         max_length=20,
         null=True,
     )
@@ -30,7 +23,6 @@ class Squirrel(models.Model):
     PM = 'PM'
 
     Shift = models.CharField(
-        help_text=_('Morning or Afternoon Shift'),
         choices = (
             (AM, 'In the morning'),
             (PM, 'In the afternoon'),
@@ -38,11 +30,12 @@ class Squirrel(models.Model):
         default = AM,
         max_length = 20,
         null = True,
+        blank = True,
 	)
 
     Date = models.DateField(
-        help_text = _('Date encountered'),
         null = True,
+        blank = True,
     )
 
     ADULT = 'Adult'
@@ -51,7 +44,6 @@ class Squirrel(models.Model):
     BLANK = ''
 
     Age = models.CharField(
-        help_text=_('Age'),
         choices = (
             (ADULT, 'Adult'),
             (JUVENILE, 'Juvenile'),
@@ -70,7 +62,6 @@ class Squirrel(models.Model):
     UNKNOWN = '     '
 
     Primary_Fur_Color = models.CharField(
-        help_text=_('Primary Fur Color'),
         choices = (
             (GRAY, 'Gray'),
             (BLACK, 'Black'),
@@ -82,6 +73,7 @@ class Squirrel(models.Model):
         default = BLANK,
         max_length = 20,
         null = True,
+        blank = True,
     )
 
     G = 'Gray'
@@ -99,8 +91,6 @@ class Squirrel(models.Model):
     UNKNOWN = '?'
 
     Highlight_Fur_Color = models.CharField(
-
-        help_text=_('Highlight Fur Color'),
         choices = (
             (G, 'Gray'),
             (B, 'Black'),
@@ -119,20 +109,20 @@ class Squirrel(models.Model):
         default = BLANK,
         max_length = 50,
         null=True,
+        blank = True,
     )
 
 
     Combination_Fur = models.CharField(
-
-        help_text = _('Combination of Primary and Highlight'),
         max_length = 100,
         null = True,
+        blank = True,
     )
 
     Color_Notes = models.CharField(
-        help_text = _('Color Notes'),
         max_length = 100,
         null = True,
+        blank = True,
     )
 
     AG = 'Above Ground'
@@ -141,141 +131,134 @@ class Squirrel(models.Model):
     BLANK = ''
 
     Location = models.CharField(
-
-        help_text = _('Location'),
-
         choices = (
             (AG, 'Above Ground'),
             (GP, 'Ground Plane'),
             (UNKNOWN, '?'),
             (BLANK, '')
         ),
-
         default = BLANK,
         max_length = 20,
         null = True,
+        blank = True,
     )
-
     TRUE = 'TRUE'
     FALSE = 'FALSE'
 
     Above_Ground_Sighter_Measurement = models.CharField(
-
-        help_text = _('Above Ground Sighter Measurement'),
         default = FALSE,
         max_length = 20,
         null = True,
+        blank = True,
     )
 
     Specific_Location = models.CharField(
-        help_text = _('Specific Location'),
         max_length = 100,
         null = True,
+        blank = True,
     )
 
     Running = models.CharField(
-            help_text = _('Running'),
             choices=((TRUE,'true'),(FALSE,'false')),
             default=FALSE,
             max_length=10,
             null=True,
+            blank = True,
     )
     Chasing = models.CharField(
-            help_text = _('Chasing'),
             choices=((TRUE,'true'),(FALSE,'false')),
             default=FALSE,
             max_length=10,
             null=True,
+            blank = True,
     )
     Climbing = models.CharField(
-            help_text = _('Climbing'),
             choices=((TRUE,'true'),(FALSE,'false')),
             default=FALSE,
             max_length=10,
             null=True,
+            blank = True,
     )
     Eating = models.CharField(
-            help_text = _('Eating'),
             choices=((TRUE,'true'),(FALSE,'false')),
             default=FALSE,
             max_length=10,
             null=True,
+            blank = True,
     )
     Foraging = models.CharField(
-            help_text = _('Foraging'),
             choices=((TRUE,'true'),(FALSE,'false')),
             default=FALSE,
             max_length=10,
             null=True,
+            blank = True,
     )
 
     Other_Activities = models.CharField(
-
-        help_text = _('Other Activities'),
         max_length = 100,
         null = True,
+        blank = True,
     )
 
     Kuks = models.CharField(
-            help_text = _('Kuks'),
             choices=((TRUE,'true'),(FALSE,'false')),
             default=FALSE,
             max_length=10,
             null=True,
+            blank = True,
     )
     Quaas = models.CharField(
-            help_text = _('Quaas'),
             choices=((TRUE,'true'),(FALSE,'false')),
             default=FALSE,
             max_length=10,
             null=True,
+            blank = True,
     )
     Moans = models.CharField(
-            help_text = _('Moans'),
             choices=((TRUE,'true'),(FALSE,'false')),
             default=FALSE,
             max_length=10,
             null=True,
+            blank = True,
     )
     Tail_Flags = models.CharField(
-            help_text = _('Tail_Flags'),
             choices=((TRUE,'true'),(FALSE,'false')),
             default=FALSE,
             max_length=10,
             null=True,
+            blank = True,
     )
     Tail_Twitches = models.CharField(
-            help_text = _('Tail_Twiches'),
             choices=((TRUE,'true'),(FALSE,'false')),
             default=FALSE,
             max_length=10,
             null=True,
+            blank = True,
     )
     Approaches = models.CharField(
-            help_text = _('Approaches'),
             choices=((TRUE,'true'),(FALSE,'false')),
             default=FALSE,
             max_length=10,
             null=True,
+            blank = True,
     )
     Indifferent = models.CharField(
-            help_text = _('Indifferent'),
             choices=((TRUE,'true'),(FALSE,'false')),
             default=FALSE,
             max_length=10,
             null=True,
+            blank = True,
     )
     Runs_From = models.CharField(
-            help_text = _('Runs_From'),
             choices=((TRUE,'true'),(FALSE,'false')),
             default=FALSE,
             max_length=10,
             null=True,
+            blank = True,
     )
 
     Other_Interactions = models.CharField(
-
-        help_text = _('Other Interactions'),
         max_length = 50,
         null = True,
+        blank = True,
     )
