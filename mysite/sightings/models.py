@@ -3,20 +3,22 @@ from django.db import models
 from django.utils.translation import gettext as _
 
 class Squirrel(models.Model):
- 
-    X = models.DecimalField(
-        help_text=('longitude'),
-        max_digits=20,
-        decimal_places=17,
+    X = models.FloatField(
+
+        help_text=_('X'),
+
         null=True,
+
+    ) 
+    
+    Y = models.FloatField(
+
+        help_text=_('Y'),
+
+        null=True,
+
     )
 
-    Y = models.DecimalField(
-        help_text=_('latitude'),
-        max_digits=20,
-        decimal_places=17,
-        null=True,
-    )
 
     Unique_Squirrel_ID = models.CharField(
         help_text=_('Unique_Squirrel_ID'),

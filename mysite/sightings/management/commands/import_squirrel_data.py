@@ -27,7 +27,6 @@ class Command(BaseCommand):
                 else:
                     i,j,k = pattern.match(row.get('Date')).groups()
                     obj, created = Squirrel.objects.get_or_create(
-
                         X = row.get('X'),
                         Y = row.get('Y'),
                         Unique_Squirrel_ID = row.get('Unique Squirrel ID'),
@@ -57,7 +56,6 @@ class Command(BaseCommand):
                         Runs_From = row.get('Runs from'),
                         Other_Interactions = row.get('Other Interactions'),
                      )
-
                 set1.add(row.get('Unique Squirrel ID'))
-
         print('Finished')
+                                         
