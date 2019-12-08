@@ -1,48 +1,67 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponse
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse, reverse_lazy
 from .models import Squirrel
 from .forms import SightingsForm
 
 def display(request,*args,**kwargs):
 
-    list1 = Squirrel.objects.all()
-    list2 = ['Unique_Squirrel_ID','Location','Date']
+    squirrels = Squirrel.objects.all()
 
     context={
-        'squirrels':list1,
-        'fields':list2,
-    }    
+        'squirrels':squirrels,
+    }  
 
     return render(request,'sightings/display.html',context)
 
 
-class add(CreateView):
-
-    model = Squirrel
-    fields = '__all__'
-    success_url = reverse_lazy('sightings:sightings')
+def add(request):
+   
+    if request.method == 'POST':
+        Form =SightingsForm(request.POST)
+        if Form.is_valid():
+            Form.save()
+            return redirect('sightings:display')
+    else:
+        Form = SightingsForm()
+    context={
+       'Form': Form,
+    }
+    return render(request, 'sightings/add.html', context)
 
 
 def stats(request):
-    
-    list3 = Squirrel.objects.all()
+   
+    Total_Sightings=Squirrel.objects.all().count()
+    Age_Adult=Squirrel.objects.filter(age='Adult').count()
+    Age_Juvenile=Squirrel.objects.filter(Age='Juvenile').count()
+    Running=Squirrel.objects.filter(Running=True).count()
+    Chasing=Squirrel.objects.filter(Chasing=True).count()
+    Climbing=Squirrel.objects.filter(Climbing=True).count()
+    Eating=Squirrel.objects.filter(Eating=True).count()
+    Foraging=Squirrel.objects.filter(Foraging=True).count()
     context={
-        'squirrels':list3,        
+        'Total_Sightings': Total_Sightings,
+        'Age_Adult': Age_Adult,
+        'Age_Juvenile': Age_Juvenile,
+        'Running': Running,
+        'Chasing': Chasing,
+        'Climbing': Climbing,
+        'Eating': Eating,
+        'Foraging': Foraging, 
     }
     return render(request,'sightings/stats.html',context)
 
 
-def modify(request, sq_id):
+def modify(request, squirrel_id):
 
-    content1 = get_object_or_404(Squirrel, Unique_Squirrel_ID = sq_id)
+    content1 = get_object_or_404(Squirrel, Unique_Squirrel_ID = squirrel_id)
     content2 = SightingsForm(request.POST or None,instance = content1)
     if content2.is_valid():
         content2.save()
-        return redirect(f'/sightings/{sq_id}')
+        return redirect(f'/sightings/{squirrel_id}')
     context ={
         'form':content2,
-        'sqid':sq_id,
+        'sqid':squirrel_id,
     }
     return render(request, 'sightings/modify.html', context)
