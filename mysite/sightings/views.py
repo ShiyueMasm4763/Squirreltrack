@@ -56,9 +56,9 @@ def modify(request, squirrel_id):
     form = SightingsForm(request.POST or None,instance=instance)
     if form.is_valid():
         form.save()
-        return redirect(f'/sightings/{squirrel_id}') 
+        return redirect(f'/sightings/') 
     context ={
         'form':form,
-        'sqid':squirrel_id,
+        'squirrel_id':squirrel_id,
     }
     return render(request, 'sightings/modify.html', context)

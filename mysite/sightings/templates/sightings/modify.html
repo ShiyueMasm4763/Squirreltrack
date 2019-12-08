@@ -2,12 +2,12 @@
 <h1>Edit Squirrel Sighting</h1>
 <body>
   	<div class="miniwrap">
-    	<form  method="POST" id="updatesquirrel">
-        	{% csrf_token %}
+        <form action="" method="post", class="post-form">
+                {% csrf_token %}
 		      {{form.as_ul}}
         	<input type="submit" name='Submit'>
         <br>
     	</form>	
-   	</div> 
+   	</div>
     </body>
 </html>
