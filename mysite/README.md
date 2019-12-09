@@ -54,12 +54,10 @@ $ python manage.py export_squirrel_data /path/to/file.csv
 
 > Located at: /sightings/stats
 
-## SSH Link
+## Server Link
 
 > To see our codes or more details, please check
-```bash
-git clone git@github.com:ShiyueMasm4763/Squirreltrack.git
-```
+ [https://goodlooking-253822.appspot.com](https://goodlooking-253822.appspot.com)
 
 ## Contibutors
 
