@@ -1,21 +1,21 @@
 <html>
   <body>
-    <h1>List of Squirrel Sightings</h1>
+    <h1><center> Squirrel Sightings</center></h1>
     <nav>
-      <h3>Navigation Bar</h3>
-      <a href="/map/">Squirrel Tracker</a>
-      <br />
-      <a href="/sightings/add/">Add Sighting</a>
-      <br />
-      <a href="/sightings/stats/">Statistics Info</a>
+      <h2><center>Link</center></h2>
+      <a href="/map/"><p style="text-align:center;">Map Link</a>
+      <br>
+      <a href="/sightings/add/"><p style="text-align:center;">Add Sightings Link</a>
+      <br>
+      <a href="/sightings/stats/"><p style="text-align:center;">Statistics Link</a>
     </nav>
-    <br />
+    <br>
 
   <style>
     table {font-family: arial, sans-serif; border-collapse: collapse; width: 100%;}
     td, th {border: 1px solid #dddddd;text-align: left;padding: 8px;}
-    tr:nth-child(even) {background-color: #f0f0f0;}
-    th {background-color: blue;color: white;}
+    tr:nth-child(even) {background-color: #def1fa;}
+    th {background-color: #9bddff ;color: white;}
    
   </style>
   
@@ -33,10 +33,9 @@
       {% for squirrel in squirrels %}
         <tr>
 	  <td><a href="{{squirrel.Unique_Squirrel_ID}}">{{squirrel.Unique_Squirrel_ID}}</a></td>
+          <td>{{squirrel.Date}}</td>
           <td>{{squirrel.X}}</td>
 	  <td>{{squirrel.Y}}</td>
-	  <td>{{squirrel.Age}}</td>
-	  <td>{{squirrel.Date}}</td>
         </tr>
       {% endfor %}
     </tbody>

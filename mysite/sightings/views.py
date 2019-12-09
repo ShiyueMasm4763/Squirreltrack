@@ -5,11 +5,11 @@ from .models import Squirrel
 from .forms import SightingsForm
 
 def display(request,*args,**kwargs):
-
     squirrels = Squirrel.objects.all()
-
+    fields = ['Links by Squirrel ID', 'Date', 'longitude', 'Latitude']
     context={
         'squirrels':squirrels,
+        'fields': fields,
     }  
 
     return render(request,'sightings/display.html',context)
