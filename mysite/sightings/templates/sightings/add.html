@@ -1,10 +1,7 @@
-<html>
-<h2>Add A New Squirrel Sighting Information</h2>
-<h1 style="font-family:Arial;"><p style="text-align:right;">Squirrel Sightings</p ></h1>
-< a href=" "><p style="text-align:center;">< img id="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTfRdFnPREF3Gc-Iw_50XtR5M88RJMvgxa1q--u3RvdQrwIOxy&s"></ a>
+<h2><center>🐿️Add A New Squirrel Sighting Information🐿️<center></h2>
 <form method="POST">
           {% csrf_token %}
-          {{form.as_p}}
+          {{form.as_ul}}
         <br>
         <input type="submit" value="Add">
 </form>
