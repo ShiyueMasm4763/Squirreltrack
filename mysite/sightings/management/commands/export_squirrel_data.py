@@ -4,6 +4,7 @@ from django.http import HttpResponse
 
 import csv
 
+
 class Command(BaseCommand):
     help = 'Export data to csv'
 
@@ -16,7 +17,7 @@ class Command(BaseCommand):
         file_path = options['file_path']
         print(file_path)
         with open(file_path,'w') as csvfile:
-            writer = csv.writer(csvfile)
-            writer.writerow(field_names)
-            for instance in Squirrel.objects.all():
-                writer.writerow([getattr(instance, field) for field in field_names])
+            export = csv.writer(csvfile)
+            export.writerow(field_names)
+            for item in Squirrel.objects.all():
+                export.writerow([getattr(item, field) for field in field_names])
