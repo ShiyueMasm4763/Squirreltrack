@@ -61,7 +61,7 @@ $ python manage.py export_squirrel_data /path/to/file.csv
 git clone git@github.com:ShiyueMasm4763/Squirreltrack.git
 ```
 
-## Contibutors
+## Contributors
 
 > Group: 72
 
